@@ -7,14 +7,16 @@ router.post('/user/add', UserController.create);
 
 router.post('/user/login', UserController.logIn);
 
-router.post('/user/delete', UserController.removeUser);
+router.delete('/user/delete', UserController.removeUser);
 
 // Group controllers
 router.post('/group/add', GroupController.add);
 
 router.put('/group/edit', GroupController.edit);
 
-router.put('/group/delete', GroupController.remove);
+router.delete('/group/delete', GroupController.remove);
+
+router.delete('/group/deletePerson', GroupController.removeMember);
 
 // Contact controllers
 router.post('/contact/add', ContactController.add);

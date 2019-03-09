@@ -4,14 +4,15 @@ const mongoose = require('mongoose');
 const ContactSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     phone: {
-        type: Number,
+        type: String,
         minlength: 10,
         maxlength: 10,
         required: true,
-        trim: true
+        unique: true
     }
 });
 

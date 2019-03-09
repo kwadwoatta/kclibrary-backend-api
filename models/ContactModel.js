@@ -11,10 +11,7 @@ const addContact = ({name, phone }) => {
 }
 
 const editContact = ({name, phone, newName, newNumber}) => {
-    return Contact.findOneAndUpdate(
-        {
-            name, phone
-        },
+    return Contact.findOneAndUpdate({ name, phone },
         {
             name: newName,
             phone: newNumber
@@ -26,10 +23,10 @@ const editContact = ({name, phone, newName, newNumber}) => {
         })
 }
 
-const deleteContact = ({name, phone}) => {
+const deleteContact = ({name}) => {
     return Contact.findOneAndRemove(
         {
-            name, phone
+            name
         })
         .then(contact => {
             Promise.resolve(contact)
